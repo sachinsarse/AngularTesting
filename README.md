@@ -13,11 +13,11 @@
 ##Available Commands:
 
 - Serve Angular app
-    "gulp connect"
+   - "gulp connect"
 
 - Unit test
-    "karma start"
+   - "karma start"
     
 - e2e test 
-    "webdriver-manager start"  
-    "protractor conf.js" - new command line
+   - "webdriver-manager start"  
+   - "protractor conf.js" - new command line
