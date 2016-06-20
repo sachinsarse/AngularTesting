@@ -81,4 +81,23 @@ angular.module('app').service('movieService', function($q, $timeout){
         deferral.resolve(rec);
         return deferral.promise;
     };
+
+    // var strength = '';
+    // this.grade = function (password) {
+    //     var size = password.length;
+    //     if (size > 8) {
+    //         vm.strength = 'strong';
+    //     } else if (size > 3) {
+    //         vm.strength = 'medium';
+    //     } else {
+    //         vm.strength = 'weak';
+    //     }
+    //     return strength;
+    // };
+
+    // this.getData= function () {
+    //     $http.get('api/getData').then(function (response) {           
+    //         return response.data;
+    //     });
+    // }
 });
