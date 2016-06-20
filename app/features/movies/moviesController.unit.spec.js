@@ -18,11 +18,10 @@ var movies = [
     beforeEach(module('app'));
 
     var controller;
-    var scope;
-    var jzAccountService;
+    var scope;  
 
     beforeEach(angular.mock.module(function ($provide) {
-        $provide.service('movieService', function mockService($q, $timeout) {
+        $provide.service('movieService', function mockService($q) {
             return {
                 getMovies: function () {
                     var deferral = $q.defer();
@@ -42,5 +41,5 @@ var movies = [
     it('should have a moviesController controller', function () {
         expect(controller).toBeDefined();
         expect(controller).not.toBe(null);
-    });
+    }); 
 });

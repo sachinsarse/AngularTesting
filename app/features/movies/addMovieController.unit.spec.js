@@ -26,8 +26,7 @@ var movies = [
     beforeEach(module('app'));
 
     var controller;
-    var scope;
-    var jzAccountService;
+    var scope; 
 
     beforeEach(angular.mock.module(function ($provide) {
         $provide.service('movieService', function mockService($q, $timeout) {
@@ -57,23 +56,25 @@ var movies = [
     }));
 
     it('should add a moviesController controller', function () {
+        var form ={ $valid : true};
         var show = {
             id: 3,
             title: 'Walking Dead',
             year: 2011,
             favorite: false
         };      
-        controller.addShow(show);
+        controller.addShow(form,show);
         expect(movies.length).toBe(3);
     });
         it('should update moviesController controller', function () {
+        var form ={ $valid : true};
         var show = {
             id: 1,
             title: 'Walking Dead1',
             year: 2015,
             favorite: false
         };      
-        controller.updateShow(show);
+        controller.updateShow(form,show);
         var updatedRecord = search(show.id,movies);
         expect(updatedRecord.title).toBe('Walking Dead1');
     });

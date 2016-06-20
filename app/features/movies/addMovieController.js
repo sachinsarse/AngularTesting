@@ -8,16 +8,20 @@ angular.module('app').controller('addMovieController', function(movieService, $r
             vm.newshow = data;
         });
     }
-    vm.addShow = function (show) {        
-        movieService.addMovie(show).then(function () {
-            vm.newshow = {};
-            $location.path('/Movies');
-        });
+    vm.addShow = function(form, show) {
+        if (form.$valid) {
+            movieService.addMovie(show).then(function() {
+                vm.newshow = {};
+                $location.path('/Movies');
+            });
+        }
     };
-    vm.updateShow = function (show) {
-        movieService.updateMovie(show).then(function () {
-            vm.newshow = {};
-            $location.path('/Movies');
-        });
+    vm.updateShow = function(form, show) {
+        if (form.$valid) {
+            movieService.updateMovie(show).then(function() {
+                vm.newshow = {};
+                $location.path('/Movies');
+            });
+        }
     };
 });
