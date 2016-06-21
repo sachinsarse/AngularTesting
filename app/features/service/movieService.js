@@ -1,4 +1,4 @@
-angular.module('app').service('movieService', function($q, $timeout){
+angular.module('app').service('movieService', function($q, $timeout, $http){
     this.movies = [
         {
             id: 0,
@@ -82,22 +82,27 @@ angular.module('app').service('movieService', function($q, $timeout){
         return deferral.promise;
     };
 
-    // var strength = '';
-    // this.grade = function (password) {
-    //     var size = password.length;
-    //     if (size > 8) {
-    //         vm.strength = 'strong';
-    //     } else if (size > 3) {
-    //         vm.strength = 'medium';
-    //     } else {
-    //         vm.strength = 'weak';
-    //     }
-    //     return strength;
-    // };
+    var strength = '';
+    this.grade = function (password) {
+        var size = password.length;
+        if (size > 8) {
+            strength = 'strong';
+        } else if (size > 3) {
+            strength = 'medium';
+        } else {
+            strength = 'weak';
+        }
+        return strength;
+    };
 
-    // this.getData= function () {
-    //     $http.get('api/getData').then(function (response) {           
-    //         return response.data;
-    //     });
-    // }
+    this.getThings = function() {
+        return $http.get('/api/things').then(
+            function(response) {
+                return response.data;
+            },
+            function(error) {
+                return $q.reject(error.status);
+            }
+        );
+    }
 });

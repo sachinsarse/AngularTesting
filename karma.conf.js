@@ -23,20 +23,14 @@ module.exports = function(config) {
       'app/features/directive/**/*.html': ['ng-html2js'] 
     },
 
-    ngHtml2JsPreprocessor: {
-      // strip this from the file path
-      stripPrefix: 'app/',
-      // create a single module that contains templates from all the files
+    ngHtml2JsPreprocessor: {   
+      stripPrefix: 'app/',     
       moduleName: 'app'
     },
-
-    reporters: ['progress'],
 
     port: 9876,
 
     colors: true,
-
-    logLevel: config.LOG_INFO,
 
     autoWatch: true,
 

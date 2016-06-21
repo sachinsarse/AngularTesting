@@ -15,15 +15,15 @@ angular.module('app').controller('moviesController', function(movieService) {
     };
     vm.getMovies();
 
-    // vm.strength ='';
-    // vm.grade = function (password) {
-    //     var size = password.length;
-    //     if (size > 8) {
-    //         vm.strength = 'strong';
-    //     } else if (size > 3) {
-    //         vm.strength = 'medium';
-    //     } else {
-    //         vm.strength = 'weak';
-    //     }
-    // };
+    vm.strength = '';
+    vm.grade = function (password) {
+        var size = password.length;
+        if (size > 8) {
+            vm.strength = 'strong';
+        } else if (size > 3) {
+            vm.strength = 'medium';
+        } else {
+            vm.strength = 'weak';
+        }
+    };
 });

@@ -42,22 +42,20 @@ var movies = [
         expect(controller).toBeDefined();
         expect(controller).not.toBe(null);
     }); 
-    // it('should call service method and return data controller', function () {
-    //     expect(controller.gridItems.length).toEqual(0);
-    //     //scope.$digest();
-    //     controller.$digest();
-    //     expect(controller.gridItems.length).toEqual(2);        
-    // }); 
+    it('should call service method and return data controller', function () {
+        expect(controller.gridItems.length).toEqual(0);
+        scope.$digest();
+        expect(controller.gridItems.length).toEqual(2);        
+    }); 
+    describe('grade', function () {
+        it('sets the strength to "strong" if the password length is >8 chars', function () {           
+            controller.grade('longerthaneightchars');
+            expect(controller.strength).toEqual('strong');
+        });
 
-    // describe('grade', function () {
-    //     it('sets the strength to "strong" if the password length is >8 chars', function () {           
-    //         controller.grade('longerthaneightchars');
-    //         expect(controller.strength).toEqual('strong');
-    //     });
-
-    //     it('sets the strength to "weak" if the password length <3 chars', function () {            
-    //         controller.grade('a');
-    //         expect(controller.strength).toEqual('weak');
-    //     });
-    // });
+        it('sets the strength to "weak" if the password length <3 chars', function () {            
+            controller.grade('a');
+            expect(controller.strength).toEqual('weak');
+        });
+    });
 });
