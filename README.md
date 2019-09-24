@@ -21,3 +21,4 @@
 - e2e test 
    - "webdriver-manager start"  
    - "protractor conf.js" - new command line
+   ********************
